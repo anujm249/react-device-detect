@@ -139,12 +139,16 @@ var isTabletType = function isTabletType() {
 };
 
 var isMobileAndTabletType = function isMobileAndTabletType() {
-  switch (_getUaData.device.type) {
-    case MOBILE:
-    case TABLET:
-      return true;
-    default:
-      return false;
+  if (document.body.offsetWidth <= 500) {
+    return true;
+  } else {
+    switch (_getUaData.device.type) {
+      case MOBILE:
+      case TABLET:
+        return true;
+      default:
+        return false;
+    }
   }
 };
 

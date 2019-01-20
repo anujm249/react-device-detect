@@ -20,12 +20,16 @@ const isMobileType = () => device.type === MOBILE;
 const isTabletType = () => device.type === TABLET;
 
 const isMobileAndTabletType = () => {
-  switch (device.type) {
+  if(document.body.offsetWidth <= 500) {
+    return true;
+  } else {
+    switch (device.type) {
     case MOBILE:
     case TABLET:
       return true;
     default:
       return false;
+    }
   }
 };
 
