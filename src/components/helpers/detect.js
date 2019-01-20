@@ -1,7 +1,7 @@
 import { browser, device, os, ua, engine } from "./get-ua-data";
 import * as create from "./types";
 
-const type = create.checkType(document.body.offsetWidth <= 500 ? 'mobile' : device.type);
+const type = create.checkType(document.body.offsetWidth <= 500 ? {isMobile: true} : device.type);
 
 export default () => {
   const {

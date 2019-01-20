@@ -721,7 +721,7 @@ var create = _interopRequireWildcard(_types);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
-var type = create.checkType(document.body.offsetWidth <= 500 ? 'mobile' : _getUaData.device.type);
+var type = create.checkType(document.body.offsetWidth <= 500 ? { isMobile: true } : _getUaData.device.type);
 
 exports.default = function () {
   var isBrowser = type.isBrowser,
